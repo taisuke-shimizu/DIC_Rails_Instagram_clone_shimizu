@@ -19,6 +19,7 @@ class BlogsController < ApplicationController
     end
   end
   def show
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   def edit
   end
@@ -39,7 +40,7 @@ class BlogsController < ApplicationController
   end
   private
   def blog_params
-    params.require(:blog).permit(:title, :content, :image, :image_cache)
+    params.require(:blog).permit(:title, :content, :image, :image_cache, :user_id)
   end
   def set_blog
     @blog = Blog.find(params[:id])
