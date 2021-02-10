@@ -1,4 +1,5 @@
 <h2>ブログ詳細</h2>
+<p>投稿者: <%= @blog.user.name %></p>
 <p>タイトル: <%= @blog.title %></p>
 <p>内容: <%= @blog.content %></p>
 <p>画像: <%= image_tag @blog.image.url, size: '200x200' %></p>
