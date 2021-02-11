@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#user_signup{
+  padding-top: 40px;
+}
+#user_profile{
+  padding-top: 40px;
+}
+#user_show_h{
+  margin-top: 50px;
+}
+.user_new_ul{
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+.well{
+  width:200px;
+  margin: 0 auto;
+  font-size: 10px;
+  background-color: rgb(236, 92, 116);
+  color: aliceblue;
+  display: table;
+  text-align: center;
+}
+.profile_content{
+  margin-top: 10px;
+}

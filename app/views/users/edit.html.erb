@@ -1,21 +1,26 @@
-<h3>プロフィール編集</h3>
+<h3 id='user_profile'>プロフィール編集</h3>
 <%= form_with(model: @user, local: true) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= @user.errors.count %>件のエラーがあります。</h2>
-      <ul>
+      <ul class='user_new_ul' >
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="well"><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :profile_image %>
-  <%= f.file_field :image %>
-  <%= f.submit "Edit my account" %>
+  <div class="form-group profile_content ">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Write down your name", class: "form-control" %>
+  </div>
+  <div class="form-group profile_content ">
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: "Write down your email", class: "form-control" %>
+  </div>
+  <div class="form-group profile_content "> 
+    <%= f.label :profile_image %>
+    <%= f.file_field :image %>
+  </div>
+  <%= f.submit "Edit my account", class: "btn btn-primary" %>
 <% end %>
-<%= link_to 'プロフィールへ戻る', user_path(@user.id) %>
