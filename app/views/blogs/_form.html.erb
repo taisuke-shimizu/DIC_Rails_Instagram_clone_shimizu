@@ -9,19 +9,19 @@
       </ul>
     </div>
   <% end %>
-  <div class="blog_title">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
-  <div class="blog_content">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, class: "form-control text-content" %>
   </div>
-  <div class="blog_image">
+  <div class="form-group">
     <%= form.label :image %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "投稿する", class: "btn btn-primary"%>
+  <%= link_to "ブログ一覧画面にもどる", blogs_path, class: "btn btn-default" %>
 <% end %>
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>

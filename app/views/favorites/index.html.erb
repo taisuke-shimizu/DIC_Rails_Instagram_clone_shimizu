@@ -1,19 +1,12 @@
-<h3>favorites list</h3>
-<table>
-  <tr>
-    <th>投稿者</th>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>画像</th>
-  </tr>
-<% current_user.favorites.each do |favorite| %>
-  <tr>
-      <td><%= favorite.blog.user.name %></td>
-      <td><%= favorite.blog.title %></td>
-      <td><%= favorite.blog.content %></td>
-      <td><%= image_tag favorite.blog.image.url,size: '100x100' %></td>
-  </tr>
-<% end %>
-</table>
-<%= link_to '新規投稿', new_blog_path %>
-<%= link_to '投稿一覧', blogs_path %>
+<h3 class='favorites_h'>favorites list</h3>
+<div class="container">
+  <% current_user.favorites.each do |favorite| %>
+    <div class="col-sm-4 col-md-4 ">
+      <p class='favorite_p'>投稿者：<%= favorite.blog.user.name %></p>
+      <p class='favorite_p'>タイトル：<%= favorite.blog.title %></p>
+      <p class='favorite_p'>内容</p>
+      <p><%= favorite.blog.content %></p>
+      <p><%= image_tag favorite.blog.image.url,size: '100x100' %></p>
+    </div>
+  <% end %>
+</div>

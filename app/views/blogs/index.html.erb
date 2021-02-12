@@ -1,24 +1,15 @@
-<h1>ブログ一覧</h1>
-<table>
-  <tr>
-    <th>投稿者</th>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>画像</th>
-  </tr>
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.user.name %></td>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= image_tag blog.image.url,size: '100x100' %></td>
-    <td><%= link_to '詳細確認', blog_path(blog.id) %></td>
-    <% if current_user.id == blog.user_id %>
-      <td><%= link_to '投稿編集', edit_blog_path(blog.id) %></td>
-      <td><%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-<%= link_to '新規投稿', new_blog_path %>
-<%= link_to 'お気に入り一覧', favorites_path %>
+<h1 id='index_h'>ブログ一覧</h1>
+<div class="container">
+  <% @blogs.each do |blog| %>
+    <div class="col-sm-4 col-md-4 ">
+      <p id='index_name'><%= blog.user.name %></p>
+      <p><%= blog.title %></p>
+      <p><%= image_tag blog.image.url,size: '100x100' %></p>
+      <%= link_to '詳細', blog_path(blog.id),class:"btn btn-default" %>
+      <% if current_user.id == blog.user_id %>
+        <%= link_to '編集', edit_blog_path(blog.id),class:"btn btn-default" %>
+        <%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '削除してもよろしいですか？' },class:"btn btn-danger" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
