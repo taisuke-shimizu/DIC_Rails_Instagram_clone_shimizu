@@ -12,9 +12,6 @@
     <header>
       <p id='top_logo' ><%= image_tag 's.png', size: '47x47' %></p>
       <p id='top_p' >stagram</p>
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
       <% if current_user != nil %>
         <p class="login_user" id="user_image" ><%= image_tag current_user.image.url,size: '40x40' %></p>
         <p class="login_user" ><%= current_user.name %>さんがログイン中です</p>
@@ -38,7 +35,12 @@
         </ul>
       <% end %>
     </header>
-    <%= yield %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key},alert alert-success") %>
+      <% end %>
+    <article>
+      <%= yield %>
+    </article>
     <footer>
       <p>運営会社Shimi株式会社</p>
       <p>© Shimistagram Corp.</p>

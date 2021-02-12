@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user.id)
     else
-      render :new
+      render :new, notice: "ログイン失敗…"
     end
   end
   def destroy

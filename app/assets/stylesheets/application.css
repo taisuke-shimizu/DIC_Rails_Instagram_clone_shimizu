@@ -19,7 +19,7 @@ html{
 }
 header{
   width: 100%;
-  background-color: white;
+  background-color: rgb(236, 235, 235);
   height: 54px;
   margin: 0;
   border-bottom: 1px solid rgb(205, 205, 216);
@@ -34,6 +34,7 @@ header p{
 }
 #top_logo{
   padding-bottom: 4px;
+  margin-top: -2px;
   margin-left: 20px;
 }
 .top_logs{
@@ -73,7 +74,7 @@ header ul:after {
 }
 footer {
   width: 100%;
-  background-color:white;
+  background-color:rgb(236, 235, 235);
   padding: 5px 0 5px 0;
   color: navy;
   margin: auto;
@@ -83,8 +84,8 @@ footer {
   border-top: 1px solid rgb(205, 205, 216);
 }
 body{
+  background: linear-gradient(-135deg, #E4A972, #9941D8);
   min-height: 100vh;
-  background-color: rgb(231, 230, 226);
   margin-bottom: 60px;
   margin-top: 50px;
   padding-top: 5px;

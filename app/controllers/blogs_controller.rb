@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
     else
       if @blog.save
         BlogMailer.blog_mail(@blog).deliver
-        redirect_to blogs_path, notice: '投稿完了！'
+        redirect_to blogs_path, notice: '新しく記事を投稿しました'
       else
         render :new
       end
@@ -34,7 +34,7 @@ class BlogsController < ApplicationController
   end
   def destroy
     @blog.destroy
-    redirect_to blogs_path, notice: '削除しました'
+    redirect_to blogs_path, notice: '記事を削除しました'
   end
   def confirm
     @blog = current_user.blogs.build(blog_params)

@@ -4,10 +4,11 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
   <p>タイトル：<%= @blog.title %></p>
-  <p>内容：<%= @blog.content %></p>
-  <p>画像：<%= image_tag @blog.image.url, size: '200x200' %></p>
-  <%= form.submit  "登録する" %>
-  <%= form.submit "戻る", name: "back" %>
+  <p>内容</p>
+  <p><%= @blog.content %></p>
+  <p><%= image_tag @blog.image.url, size: '200x200' %></p>
+  <%= form.submit  "登録する", class: "btn btn-primary" %>
+  <%= form.submit "戻る", class: "btn btn-default", name: "back" %>
 <% end %>
 <%= form_with(model:@blog, url:new_blog_path, local:true, method:"get") do |form| %>
   <%= form.hidden_field :image_cache %>
