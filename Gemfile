@@ -15,12 +15,26 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'faker'
+gem 'fog-aws'
+gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
+gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'mini_racer', platforms: :ruby # デプロイ時に必要
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
+  gem 'capistrano', '3.6.0' # capistranoのツール一式
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -37,10 +51,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'faker'
-gem 'fog-aws'
-gem 'dotenv-rails'
